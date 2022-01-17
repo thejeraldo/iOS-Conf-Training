@@ -66,10 +66,10 @@ class LogController: UIViewController {
             NSLog("NSLog - credentials being used: %@", parameterDictionary)
 //        #endif
         
-        os_log("OS_LOG - credentials being used: %{public}@", log: .default, parameterDictionary)
+        os_log("OS_LOG - credentials being used: %{private}@", log: .default, parameterDictionary)
         
         let logger = Logger(subsystem: "com.example.LoggingTest", category: "main")
-        logger.info("Logger - credentials being used \(parameterDictionary, privacy: .public)")
+        logger.info("Logger - credentials being used \(parameterDictionary, privacy: .private)")
         
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
